@@ -1,0 +1,72 @@
+export class NotasI {
+    Curso: string;
+    Nº: number;
+    DNI: number;
+    Correo: string;
+    ESTUDIANTE: string;
+    TUTOR: string;
+    C1: number;
+    C2: number;
+    C3: number;
+    C4: number;
+    C5: number;
+    C6: number;
+    C7: number;
+    C8: number;
+    C9: number;
+    C10: number;
+    C11: number;
+    C12: number;
+    C13: number;
+    C14: number;
+    C15: number;
+    C16: number;
+    C17: number;
+    C18: number;
+    C19: number;
+    C20: number;
+    C21: number;
+    C22: number;
+    C23: number;
+    C24: number;
+    PDE: number;
+    RCJ: number;
+    NF: number;
+    
+    constructor(nota: NotasI) {
+      this.Curso = nota.Curso;
+      this.Nº = nota.Nº;
+      this.DNI = nota.DNI;
+      this.Correo = nota.Correo;
+      this.ESTUDIANTE = nota.ESTUDIANTE;
+      this.TUTOR = nota.TUTOR;
+      this.C1 = nota.C1;
+      this.C2 = nota.C2;
+      this.C3 = nota.C3;
+      this.C4 = nota.C4;
+      this.C5 = nota.C5;
+      this.C6 = nota.C6;
+      this.C7 = nota.C7;
+      this.C8 = nota.C8;
+      this.C9 = nota.C9;
+      this.C10 = nota.C10;
+      this.C11 = nota.C11;
+      this.C12 = nota.C12;
+      this.C13 = nota.C13;
+      this.C14 = nota.C14;
+      this.C15 = nota.C15;
+      this.C16 = nota.C16;
+      this.C17 = nota.C17;
+      this.C18 = nota.C18;
+      this.C19 = nota.C19;
+      this.C20 = nota.C20;
+      this.C21 = nota.C21;
+      this.C22 = nota.C22;
+      this.C23 = nota.C23;
+      this.C24 = nota.C24;
+      this.PDE = nota.PDE;
+      this.RCJ = nota.RCJ;
+      this.NF = nota.NF;
+    }
+  }
+  

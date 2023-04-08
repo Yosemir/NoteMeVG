@@ -1,0 +1,162 @@
+<p>
+  <mat-toolbar color="primary" style="background-color: #3281C3;">
+    <span>NoteMeVG</span>
+  </mat-toolbar>
+</p>
+
+<div class="container">
+<table mat-table [dataSource]="nota" class="mat-elevation-z8" >
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+        <ng-container matColumnDef="Curso">
+          <th mat-header-cell *matHeaderCellDef> Curso </th>
+          <td mat-cell *matCellDef="let nota"> {{nota.Curso}} </td>
+        </ng-container>
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="C1">
+    <th mat-header-cell *matHeaderCellDef> CONTROL Nº 01 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C1}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="C2">
+    <th mat-header-cell *matHeaderCellDef> PONENCIA SILVIA GUARDATI </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C2}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="C3">
+    <th mat-header-cell *matHeaderCellDef> FLUJOGRAMA </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C3}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="C4">
+    <th mat-header-cell *matHeaderCellDef> TALLER DE PSEUDOCÓDIGO </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C4}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C5">
+    <th mat-header-cell *matHeaderCellDef> CONTOL Nº 02 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C5}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C6">
+    <th mat-header-cell *matHeaderCellDef> CONTOL Nº 03 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C6}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C7">
+    <th mat-header-cell *matHeaderCellDef> CONTOL Nº 04 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C7}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C8">
+    <th mat-header-cell *matHeaderCellDef> C8 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C8}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C9">
+    <th mat-header-cell *matHeaderCellDef> C9 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C9}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C10">
+    <th mat-header-cell *matHeaderCellDef> C10 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C10}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C11">
+    <th mat-header-cell *matHeaderCellDef> C11 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C11}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C12">
+    <th mat-header-cell *matHeaderCellDef> C12 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C12}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C13">
+    <th mat-header-cell *matHeaderCellDef> C13 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C13}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C14">
+    <th mat-header-cell *matHeaderCellDef> C14 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C14}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C15">
+    <th mat-header-cell *matHeaderCellDef> C15 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C15}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C16">
+    <th mat-header-cell *matHeaderCellDef> C16 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C16}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C17">
+    <th mat-header-cell *matHeaderCellDef> C17 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C17}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="C18">
+    <th mat-header-cell *matHeaderCellDef> C18 </th>
+    <td mat-cell *matCellDef="let nota"> {{nota.C18}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
+
+ <!-- <div class="container">
+    <div class="card-body">
+
+    <table class="table table-hover">
+    <thead>
+      <tr class="text-center">
+        <th scope="col">Nombre</th>
+        <th scope="col">C1</th>
+        <th scope="col">C2</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let nota of notas" class="text-center">
+            <th>{{ nota.ESTUDIANTE }}</th>
+            <th>{{ nota.C1 }}</th>
+            <th>{{ nota.C2 }}</th>
+            <th>{{ nota.C3 }}</th>
+            <th>{{ nota.C4 }}</th>
+            <th>{{ nota.C5 }}</th>
+            <th>{{ nota.C6 }}</th>
+            <th>{{ nota.C6 }}</th>
+            <th>{{ nota.C7 }}</th>
+            <th>{{ nota.C8 }}</th>
+            <th>{{ nota.C9 }}</th>
+            <th>{{ nota.C10 }}</th>
+            <th>{{ nota.C11 }}</th>
+            <th>{{ nota.C12 }}</th>
+            <th>{{ nota.C13 }}</th>
+            <th>{{ nota.C14 }}</th>
+            <th>{{ nota.C15 }}</th>
+            <th>{{ nota.C16 }}</th>
+            <th>{{ nota.C17 }}</th>
+            <th>{{ nota.C18 }}</th>
+            <th>{{ nota.C19 }}</th>
+            <th>{{ nota.C20 }}</th>
+            <th>{{ nota.C21 }}</th>
+            <th>{{ nota.C22 }}</th>
+            <th>{{ nota.C23 }}</th>
+            <th>{{ nota.C24 }}</th>
+
+          </tr>
+  </table>
+  </div>
+  
+  </div>-->
+  
