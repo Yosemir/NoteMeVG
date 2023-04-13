@@ -1,24 +1,17 @@
-# Seleccionamos la imagen de Node.js como base para nuestra imagen de Docker
-FROM node:14-alpine
+FROM node:16.14.0 as build
 
-ENV NG_CLI_ANALYTICS="false"
+WORKDIR /source
 
-# Creamos un directorio de trabajo dentro de la imagen de Docker
-WORKDIR /app
+# Copy the package lock file into the container
+COPY package*.json ./
+# Run ci only for the production dependencies
+RUN npm ci
 
-# Copiamos los archivos del proyecto a la imagen
+# Copy the rest of the files into the container and build
 COPY . .
+RUN npm run build –prod
 
-# Instalamos las dependencias de Node.js
-RUN npm install
-
-
-
-# Compilamos la aplicación de Angular en modo de producción
-RUN npm run build --prod
-
-# Exponemos el puerto 80 de la imagen para que podamos acceder a la aplicación desde el navegador
-
+FROM nginx:alpine
+COPY –from=build /source/dist/NoteMeVG /usr/share/nginx/html
+COPY –from=build /source/nginx.conf /etc/nginx/conf.d/
 EXPOSE 8080
-# Comando que se ejecutará al iniciar el contenedor de Docker
-CMD ["npm", "start"]
