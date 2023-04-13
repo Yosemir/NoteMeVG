@@ -10,7 +10,7 @@ RUN npm ci
 # Copy the rest of the files into the container and build
 COPY . .
 RUN npm run build --prod
-
+RUN pwd
 FROM nginx:alpine
 COPY –from=build /source /usr/share/nginx/html
 COPY –from=build /nginx.conf /etc/nginx/conf.d/
