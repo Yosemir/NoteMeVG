@@ -4,36 +4,188 @@
   </mat-toolbar>
 </p>
 
-<div class="container">
+<!-- Tabla 1 -->
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headersTabla1">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of notaTabla1">
+      <td *ngFor="let header of headersTabla1">{{ item[header] || '' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Tabla 2 -->
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headersTabla2">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of notaTabla2">
+      <td *ngFor="let header of headersTabla2">{{ item[header] || '' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headersTabla3">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of notaTabla3">
+      <td *ngFor="let header of headersTabla3">{{ item[header] || '' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headersTabla4">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of notaTabla4">
+      <td *ngFor="let header of headersTabla4">{{ item[header] || '' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headersTabla5">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of notaTabla5">
+      <td *ngFor="let header of headersTabla5">{{ item[header] || '' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headersTabla6">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of notaTabla6">
+      <td *ngFor="let header of headersTabla6">{{ item[header] || '' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headersTabla7">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of notaTabla7">
+      <td *ngFor="let header of headersTabla7">{{ item[header] || '' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headersTabla8">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of notaTabla8">
+      <td *ngFor="let header of headersTabla8">{{ item[header] || '' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headersTabla9">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of notaTabla9">
+      <td *ngFor="let header of headersTabla9">{{ item[header] || '' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headersTabla10">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of notaTabla10">
+      <td *ngFor="let header of headersTabla10">{{ item[header] || '' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headersTabla11">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of notaTabla11">
+      <td *ngFor="let header of headersTabla11">{{ item[header] || '' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+<!--<div class="container">
 <table mat-table [dataSource]="nota" class="mat-elevation-z8" >
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+
 
         <ng-container matColumnDef="Curso">
           <th mat-header-cell *matHeaderCellDef> Curso </th>
           <td mat-cell *matCellDef="let nota"> {{nota.Curso}} </td>
         </ng-container>
 
-  <!-- Position Column -->
+
   <ng-container matColumnDef="C1">
     <th mat-header-cell *matHeaderCellDef> CONTROL Nº 01 </th>
-    <td mat-cell *matCellDef="let nota"> {{nota.C1}} </td>
+    <td mat-cell *matCellDef="let nota"> {{nota.TECC1}} </td>
   </ng-container>
 
-  <!-- Name Column -->
+
   <ng-container matColumnDef="C2">
     <th mat-header-cell *matHeaderCellDef> PONENCIA SILVIA GUARDATI </th>
     <td mat-cell *matCellDef="let nota"> {{nota.C2}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
+
   <ng-container matColumnDef="C3">
     <th mat-header-cell *matHeaderCellDef> FLUJOGRAMA </th>
     <td mat-cell *matCellDef="let nota"> {{nota.C3}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
+
   <ng-container matColumnDef="C4">
     <th mat-header-cell *matHeaderCellDef> TALLER DE PSEUDOCÓDIGO </th>
     <td mat-cell *matCellDef="let nota"> {{nota.C4}} </td>
@@ -112,7 +264,7 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-</div>
+</div> -->
 
  <!-- <div class="container">
     <div class="card-body">

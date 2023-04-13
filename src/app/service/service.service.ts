@@ -17,5 +17,7 @@ export class ServiceService {
   getNotas(): Observable<NotasI[]> {
     return this.http.get<NotasI[]>(this.url);
   }
+
+
   
 }
