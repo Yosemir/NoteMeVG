@@ -11,6 +11,7 @@ RUN npm ci
 COPY . .
 RUN npm run build --prod
 RUN pwd
+RUN ls
 FROM nginx:alpine
 COPY –from=build /source /usr/share/nginx/html
 COPY –from=build /nginx.conf /etc/nginx/conf.d/
