@@ -112,7 +112,7 @@ export class ListComponent implements OnInit {
 
   public async obtenerDatos(): Promise<any> {
     const tiempoInicio = performance.now();
-    const respuesta = await fetch('http://localhost:8080/api/v1/getNotas/get/ylermo@vallegrande.edu.pe');
+    const respuesta = await fetch('http://35.203.38.167:8080/api/v1/getNotas/get/ylermo@vallegrande.edu.pe');
     const tiempoFin = performance.now();
     const tiempoRespuesta = tiempoFin - tiempoInicio;
     console.log(`El servicio tardó ${tiempoRespuesta} milisegundos en responder`);

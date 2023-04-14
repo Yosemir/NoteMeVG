@@ -1,20 +1,34 @@
-# Seleccionamos la imagen de Node.js como base para nuestra imagen de Docker
-FROM node:14-alpine
+FROM node:16.14.0 as build
 
-# Creamos un directorio de trabajo dentro de la imagen de Docker
-WORKDIR /app
+WORKDIR /source
 
-# Copiamos los archivos del proyecto a la imagen
+# Copiar el archivo package.json y package-lock.json
+COPY package*.json ./
+
+# Instalar las dependencias
+RUN npm ci
+
+# Copiar el código fuente
 COPY . .
 
-# Instalamos las dependencias de Node.js
-RUN npm install
+# Compilar la aplicación
+RUN npm run build --prod && ls
 
-# Compilamos la aplicación de Angular en modo de producción
-RUN npm run build --prod
+RUN pwd
 
-# Exponemos el puerto 80 de la imagen para que podamos acceder a la aplicación desde el navegador
-EXPOSE 80
+#RUN tar -czvf note-me-vg.tar.gz note-me-vg && ls
 
-# Comando que se ejecutará al iniciar el contenedor de Docker
-CMD ["npm", "run", "serve"]
+
+
+# Configurar el servidor web Nginx
+FROM nginx:alpine
+RUN chmod -R 777 /usr/share/nginx/html
+COPY --from=build /source/dist/note-me-vg/* /usr/share/nginx/html/
+#RUN tar -xzf /source/note-me-vg.tar.gz -C /usr/share/nginx/html && rm /usr/share/nginx/html/note-me-vg.tar.gz
+COPY --from=build /source/nginx.conf /etc/nginx/nginx.conf
+
+# Exponer el puerto 80
+EXPOSE 8080
+
+# Iniciar Nginx al iniciar el contenedor
+CMD ["nginx", "-g", "daemon off;"]

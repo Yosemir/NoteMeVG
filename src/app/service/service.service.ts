@@ -10,7 +10,7 @@ export class ServiceService {
 
   
 
-  private url = 'http://localhost:8080/api/v1/getNotas/get/ylermo@vallegrande.edu.pe';
+  private url = 'http://35.203.38.167:8080/api/v1/getNotas/get/ylermo@vallegrande.edu.pe';
 
   constructor(private http: HttpClient) { }
   
