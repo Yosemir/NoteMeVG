@@ -60,10 +60,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "NoteMeVG:build",
-            "port": 80,
-            "host": "0.0.0.0"
-          },
+          "browserTarget": "NoteMeVG:build",
+          "port": 8080 
+        },
           "configurations": {
             "production": {
               "browserTarget": "NoteMeVG:build:production"
