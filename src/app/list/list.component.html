@@ -4,6 +4,12 @@
   </mat-toolbar>
 </p>
 
+<form>
+<label for="email">Ingresa tu correo electrónico:</label>
+<!--<input type="email" id="email" name="email" required>-->
+<input type="text" [(ngModel)]="inputValue" name="email">
+<button type="submit" (click)="obtenerNotas()">Enviar</button>
+</form>
 <!-- Tabla 1 -->
 <table class="table table-bordered border-primary">
   <thead>

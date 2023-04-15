@@ -8,16 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class ServiceService {
 
-  
+ 
 
-  private url = 'http://35.203.38.167:8080/api/v1/getNotas/get/ylermo@vallegrande.edu.pe';
+  //private url = 'http://35.203.38.167:8080/api/v1/getNotas/get/';
+  private url = 'http://35.203.38.167:8080/api/v1/getNotas/get/';
 
   constructor(private http: HttpClient) { }
   
-  getNotas(): Observable<NotasI[]> {
-    return this.http.get<NotasI[]>(this.url);
+  getNotas(email: string): Observable<NotasI[]> {
+    return this.http.get<NotasI[]>(this.url + email);
   }
 
-
+  
   
 }

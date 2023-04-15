@@ -10,6 +10,7 @@ import {MatTableModule} from '@angular/material/table';
 import { LoginComponent } from './login/login/login.component';
 import { Component } from '@angular/core';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { FormsModule } from '@angular/forms';
 import {
   GoogleLoginProvider
 } from '@abacritt/angularx-social-login';
@@ -30,7 +31,8 @@ import {
     MatToolbarModule,
     BrowserAnimationsModule,
     MatTableModule,
-    SocialLoginModule
+    SocialLoginModule,
+    FormsModule
   ],
  
   providers: [

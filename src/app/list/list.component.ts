@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NotasI } from '../model/notasM';
 import { ServiceService } from '../service/service.service';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 const listarNotasI: NotasI[] = [];
 
@@ -40,18 +41,24 @@ export class ListComponent implements OnInit {
   notaTabla11: NotasI[] = [];
   headersTabla11: string[] = [];
 
+ inputValue: string = '';
 
-  constructor(private serviceService: ServiceService) {
+
+  constructor(private fb: FormBuilder,
+    private serviceService: ServiceService) {
 
   }
 
   ngOnInit(): void {
-    this.obtenerNotas();
-    this.obtenerDatos();
+    //this.obtenerNotas();
+    //this.obtenerDatos();
+    //this.onSubmit();
+    
   }
 
-  private obtenerNotas() {
-    this.serviceService.getNotas().subscribe(rest => {
+  obtenerNotas(): void {
+    console.log(this.inputValue)
+    this.serviceService.getNotas(this.inputValue).subscribe(rest => {
      
       // Obtener las notas y headers para cada tabla
       this.notaTabla1 = rest.filter(item => item.Curso === 'TEC');
@@ -98,26 +105,19 @@ export class ListComponent implements OnInit {
       const firstElementTabla11: Record<string, any> = this.notaTabla11[0];
       this.headersTabla11 = Object.keys(firstElementTabla11);
 
-
-
-
-
-
-
-
-
-
     });
   }
 
-  public async obtenerDatos(): Promise<any> {
+
+
+  /*public async obtenerDatos(): Promise<any> {
     const tiempoInicio = performance.now();
     const respuesta = await fetch('http://35.203.38.167:8080/api/v1/getNotas/get/ylermo@vallegrande.edu.pe');
     const tiempoFin = performance.now();
     const tiempoRespuesta = tiempoFin - tiempoInicio;
     console.log(`El servicio tardó ${tiempoRespuesta} milisegundos en responder`);
     return respuesta.json();
-  }
+  }*/
 
 
 }
