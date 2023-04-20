@@ -4,6 +4,7 @@ import { ServiceService } from '../service/service.service';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { SocialAuthService } from '@abacritt/angularx-social-login';
 import { LoginComponent } from '../login/login/login.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -40,6 +41,7 @@ export class ListComponent implements OnInit {
 
 
   constructor(private fb: FormBuilder,
+    private router: Router,
     private serviceService: ServiceService,
     private authService: SocialAuthService) {
       this.authService.authState.subscribe((user) => {
@@ -112,5 +114,13 @@ export class ListComponent implements OnInit {
       console.log("Finalizo la consulta");
     });
   }
+
+
+
+  public signOut(): void {
+    this.authService.signOut();
+    this.router.navigate(['/login']);
+   }
+
 
 }

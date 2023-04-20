@@ -10,8 +10,8 @@ export class ServiceService {
 
 
 
-  private url = 'http://localhost:8080/api/v1/getNotas/get/';
-  //private url = 'http://35.203.38.167:8080/api/v1/getNotas/get/';
+  //private url = 'http://localhost:8080/api/v1/getNotas/get/';
+  private url = 'http://35.203.38.167:8080/api/v1/getNotas/get/';
 
   constructor(private http: HttpClient) { }
 

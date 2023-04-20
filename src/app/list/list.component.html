@@ -1,11 +1,15 @@
 <mat-toolbar color="primary">
-<mat-toolbar-row>
-  <span>NoteMeVG</span>
-  <span class="example-spacer"></span>
-  <span>{{user.name}}</span>
-  <mat-icon>output</mat-icon>
-</mat-toolbar-row>
+  <mat-toolbar-row>
+    <span>NoteMeVG</span>
+    <span class="example-spacer"></span>
+    <span>{{user.name}}</span>
+    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" (click)="signOut()">
+      <mat-icon>output</mat-icon>
+    </button>
+  </mat-toolbar-row>
 </mat-toolbar>
+
+
 
 
 <table class="table table-bordered border-primary">
