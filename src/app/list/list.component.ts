@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NotasI } from '../model/notasM';
 import { ServiceService } from '../service/service.service';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-
-const listarNotasI: NotasI[] = [];
+import { SocialAuthService } from '@abacritt/angularx-social-login';
+import { LoginComponent } from '../login/login/login.component';
 
 @Component({
   selector: 'app-list',
@@ -12,14 +12,8 @@ const listarNotasI: NotasI[] = [];
 })
 export class ListComponent implements OnInit {
 
-  displayedColumns: string[] = ['Curso', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'];
-  headers: string[] = [];
-
-
-
   notaTabla1: NotasI[] = [];
   headersTabla1: string[] = [];
-
   notaTabla2: NotasI[] = [];
   headersTabla2: string[] = [];
   notaTabla3: NotasI[] = [];
@@ -41,25 +35,35 @@ export class ListComponent implements OnInit {
   notaTabla11: NotasI[] = [];
   headersTabla11: string[] = [];
 
- inputValue: string = '';
+  user: any;
+
 
 
   constructor(private fb: FormBuilder,
-    private serviceService: ServiceService) {
+    private serviceService: ServiceService,
+    private authService: SocialAuthService) {
+      this.authService.authState.subscribe((user) => {
+        this.user = user
+      })
 
   }
+
+
+
+ // correo: string = this.login.user !== undefined ? this.login.user?.email : '';;
+  //name: string  = this.login.user?.name!;
+
+
 
   ngOnInit(): void {
-    //this.obtenerNotas();
-    //this.obtenerDatos();
-    //this.onSubmit();
-    
+    this.obtenerNotas();
   }
 
+
+
   obtenerNotas(): void {
-    console.log(this.inputValue)
-    this.serviceService.getNotas(this.inputValue).subscribe(rest => {
-     
+    console.log(this.user.email)
+    this.serviceService.getNotas(this.user.email).subscribe(rest => {
       // Obtener las notas y headers para cada tabla
       this.notaTabla1 = rest.filter(item => item.Curso === 'TEC');
       const firstElementTabla1: Record<string, any> = this.notaTabla1[0];
@@ -105,19 +109,8 @@ export class ListComponent implements OnInit {
       const firstElementTabla11: Record<string, any> = this.notaTabla11[0];
       this.headersTabla11 = Object.keys(firstElementTabla11);
 
+      console.log("Finalizo la consulta");
     });
   }
-
-
-
-  /*public async obtenerDatos(): Promise<any> {
-    const tiempoInicio = performance.now();
-    const respuesta = await fetch('http://35.203.38.167:8080/api/v1/getNotas/get/ylermo@vallegrande.edu.pe');
-    const tiempoFin = performance.now();
-    const tiempoRespuesta = tiempoFin - tiempoInicio;
-    console.log(`El servicio tardó ${tiempoRespuesta} milisegundos en responder`);
-    return respuesta.json();
-  }*/
-
 
 }

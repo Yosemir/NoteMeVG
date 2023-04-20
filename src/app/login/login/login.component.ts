@@ -1,6 +1,8 @@
-import { SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
-import { Component } from '@angular/core';
+import { GoogleLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
+import { Component, ViewChild } from '@angular/core';
 import {  OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ListComponent } from 'src/app/list/list.component';
 
 @Component({
   selector: 'app-login',
@@ -8,33 +10,31 @@ import {  OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  
 
-  user:any;
-  loggedIn:any;
-  constructor(private authService: SocialAuthService) { }
+
+  user: SocialUser | undefined;
+  GoogleLoginProvider = GoogleLoginProvider;
+
+
+
+
+  constructor(private _authService: SocialAuthService,
+    private router: Router,
+    private listar: ListComponent) { }
+
+    emailUser?: string ;
+    nombreUser?: string = 'Hola';
 
   ngOnInit() {
-    this.authService.authState.subscribe((user) => {
+    this._authService.authState.subscribe((user) => {
       this.user = user;
-      this.loggedIn = (user != null);
-      console.log(this.user)
+      this.emailUser = user.email
+      this.router.navigate(['/notas']);
+    }, (error) => {
+      console.error(error);
     });
   }
 
-/*  public user: SocialUser = new SocialUser;
-  constructor(private authService: SocialAuthService) {}
-ngOnInit() {
-   this.authService.authState.subscribe(user => {
-   this.user = user;
 
-   console.log(user);
- });
-}
-public signInWithGoogle(): void {
- this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-}
-public signOut(): void {
- this.authService.signOut();
-}*/
+
 }

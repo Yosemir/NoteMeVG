@@ -1,7 +1,23 @@
+.example-icon {
+  padding: 0 14px;
+}
 .example-spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
+
 
   .ys {
     font-size: 16px;
+  }
+
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
   }
