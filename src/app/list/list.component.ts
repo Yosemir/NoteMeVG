@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NotasI } from '../model/notasM';
 import { ServiceService } from '../service/service.service';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { SocialAuthService } from '@abacritt/angularx-social-login';
 import { LoginComponent } from '../login/login/login.component';
 import { Router } from '@angular/router';
@@ -36,11 +35,12 @@ export class ListComponent implements OnInit {
   notaTabla11: NotasI[] = [];
   headersTabla11: string[] = [];
 
+  colorTECP1: any;
   user: any;
 
 
 
-  constructor(private fb: FormBuilder,
+  constructor(
     private router: Router,
     private serviceService: ServiceService,
     private authService: SocialAuthService) {
@@ -50,16 +50,10 @@ export class ListComponent implements OnInit {
 
   }
 
-
-
- // correo: string = this.login.user !== undefined ? this.login.user?.email : '';;
-  //name: string  = this.login.user?.name!;
-
-
-
   ngOnInit(): void {
     this.obtenerNotas();
   }
+
 
 
 

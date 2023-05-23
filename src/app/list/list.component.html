@@ -1,160 +1,156 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>NoteMeVG</span>
-    <span class="example-spacer"></span>
-    <span>{{user.name}}</span>
-    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" (click)="signOut()">
-      <mat-icon>output</mat-icon>
-    </button>
-  </mat-toolbar-row>
-</mat-toolbar>
 
+<nav class="navbar">
+  <a class="navbar-brand" href="#">NoteMeVG</a>
+  <div>
+    <span class="nav-link">{{user.name}}</span>
+          <span></span>
+          <button class="logout-btn" (click)="signOut()">
+              <i class="fas fa-sign-out-alt"></i>
+            </button>
 
+  </div>
+</nav>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headersTabla1" [ngClass]="header" class="verticalText">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of notaTabla1">
+        <td *ngFor="let header of headersTabla1" [ngClass]="header">{{ item[header] || '' }}</td>
+      </tr>
 
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headersTabla2" [ngClass]="header" class="verticalText">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of notaTabla2">
+        <td *ngFor="let header of headersTabla2" [ngClass]="header">{{ item[header] || '' }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-<table class="table table-bordered border-primary">
-  <thead>
-    <tr>
-      <th *ngFor="let header of headersTabla1">{{ header }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of notaTabla1">
-      <td *ngFor="let header of headersTabla1">{{ item[header] || '' }}</td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headersTabla3" [ngClass]="header" class="verticalText">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of notaTabla3">
+        <td *ngFor="let header of headersTabla3" [ngClass]="header">{{ item[header] || '' }}</td>
+      </tr>
+    </tbody>
+  </table>
 
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headersTabla4" [ngClass]="header" class="verticalText">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of notaTabla4">
+        <td *ngFor="let header of headersTabla4" [ngClass]="header">{{ item[header] || '' }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-<table class="table table-bordered border-primary">
-  <thead>
-    <tr>
-      <th *ngFor="let header of headersTabla2">{{ header }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of notaTabla2">
-      <td *ngFor="let header of headersTabla2">{{ item[header] || '' }}</td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headersTabla5" [ngClass]="header" class="verticalText">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of notaTabla5">
+        <td *ngFor="let header of headersTabla5" [ngClass]="header">{{ item[header] || '' }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-<table class="table table-bordered border-primary">
-  <thead>
-    <tr>
-      <th *ngFor="let header of headersTabla3">{{ header }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of notaTabla3">
-      <td *ngFor="let header of headersTabla3">{{ item[header] || '' }}</td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headersTabla6" [ngClass]="header" class="verticalText">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of notaTabla6">
+        <td *ngFor="let header of headersTabla6" [ngClass]="header">{{ item[header] || '' }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-<table class="table table-bordered border-primary">
-  <thead>
-    <tr>
-      <th *ngFor="let header of headersTabla4">{{ header }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of notaTabla4">
-      <td *ngFor="let header of headersTabla4">{{ item[header] || '' }}</td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headersTabla7" [ngClass]="header" class="verticalText">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of notaTabla7">
+        <td *ngFor="let header of headersTabla7" [ngClass]="header">{{ item[header] || '' }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-<table class="table table-bordered border-primary">
-  <thead>
-    <tr>
-      <th *ngFor="let header of headersTabla5">{{ header }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of notaTabla5">
-      <td *ngFor="let header of headersTabla5">{{ item[header] || '' }}</td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headersTabla8" [ngClass]="header" class="verticalText">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of notaTabla8">
+        <td *ngFor="let header of headersTabla8" [ngClass]="header">{{ item[header] || '' }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-<table class="table table-bordered border-primary">
-  <thead>
-    <tr>
-      <th *ngFor="let header of headersTabla6">{{ header }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of notaTabla6">
-      <td *ngFor="let header of headersTabla6">{{ item[header] || '' }}</td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headersTabla9" [ngClass]="header" class="verticalText">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of notaTabla9">
+        <td *ngFor="let header of headersTabla9" [ngClass]="header">{{ item[header] || '' }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-<table class="table table-bordered border-primary">
-  <thead>
-    <tr>
-      <th *ngFor="let header of headersTabla7">{{ header }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of notaTabla7">
-      <td *ngFor="let header of headersTabla7">{{ item[header] || '' }}</td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headersTabla10" [ngClass]="header" class="verticalText">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of notaTabla10">
+        <td *ngFor="let header of headersTabla10" [ngClass]="header">{{ item[header] || '' }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-<table class="table table-bordered border-primary">
-  <thead>
-    <tr>
-      <th *ngFor="let header of headersTabla8">{{ header }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of notaTabla8">
-      <td *ngFor="let header of headersTabla8">{{ item[header] || '' }}</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="table table-bordered border-primary">
-  <thead>
-    <tr>
-      <th *ngFor="let header of headersTabla9">{{ header }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of notaTabla9">
-      <td *ngFor="let header of headersTabla9">{{ item[header] || '' }}</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="table table-bordered border-primary">
-  <thead>
-    <tr>
-      <th *ngFor="let header of headersTabla10">{{ header }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of notaTabla10">
-      <td *ngFor="let header of headersTabla10">{{ item[header] || '' }}</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="table table-bordered border-primary">
-  <thead>
-    <tr>
-      <th *ngFor="let header of headersTabla11">{{ header }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of notaTabla11">
-      <td *ngFor="let header of headersTabla11">{{ item[header] || '' }}</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headersTabla11" [ngClass]="header" class="verticalText">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of notaTabla11">
+        <td *ngFor="let header of headersTabla11" [ngClass]="header">{{ item[header] || '' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

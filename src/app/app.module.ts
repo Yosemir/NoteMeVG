@@ -3,19 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTableModule} from '@angular/material/table';
 import { LoginComponent } from './login/login/login.component';
-import { Component } from '@angular/core';
 import { SocialLoginModule, SocialAuthServiceConfig, GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
-import { FormsModule } from '@angular/forms';
+
 import {
   GoogleLoginProvider
 } from '@abacritt/angularx-social-login';
 import { ListComponent } from './list/list.component';
-
-import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -30,13 +24,10 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatToolbarModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    FormsModule,
     SocialLoginModule,
     GoogleSigninButtonModule,
-    MatIconModule
+
+
 
   ],
 
