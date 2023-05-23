@@ -11,7 +11,8 @@ export class ServiceService {
 
 
   //private url = 'http://localhost:8080/api/v1/getNotas/get/';
-  private url = 'http://35.203.38.167:8080/api/v1/getNotas/get/';
+  //private url = 'http://35.203.38.167:8080/api/v1/getNotas/get/';
+  private url = 'https://script.google.com/macros/s/AKfycbwhx-PTfT9Wdz_8FmfYPLV-7Df42KoAjnmhLLYmj1DXpDpQSVVr1JxSi4KlLNKGu1cl/exec?correo=';
 
   constructor(private http: HttpClient) { }
 
