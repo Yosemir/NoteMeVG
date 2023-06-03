@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ServiceService {
 
-  private url = 'https://script.google.com/macros/s/AKfycbwhx-PTfT9Wdz_8FmfYPLV-7Df42KoAjnmhLLYmj1DXpDpQSVVr1JxSi4KlLNKGu1cl/exec?correo=';
+  private url = 'https://script.google.com/macros/s/AKfycbw70wAleZPYSzkeyUnP0_4T3sFDjK93WVkfTYMSv5rKvPK9gNo6prMwLG_bZMd75lKT/exec?correo=';
 
   constructor(private http: HttpClient) { }
 
